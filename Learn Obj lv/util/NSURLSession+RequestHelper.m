@@ -18,12 +18,15 @@
     [[[NSURLSession sessionWithConfiguration:NSURLSessionConfiguration.defaultSessionConfiguration] dataTaskWithRequest:request completionHandler:completion] resume];
 }
 
-- (void)request:(NSString *)url withMethod:(NSString*) httpMethod andParams:(NSDictionary *)params timeout:(NSTimeInterval *)timeout completionHandler:(void (^)(NSData*, NSURLResponse*, NSError*))completion {
+- (void)request:(NSString *)url withMethod:(NSString*) httpMethod andParams:(NSDictionary *)params timeout:(double)timeout completionHandler:(void (^)(NSData* _Nullable data, NSURLResponse* _Nullable response, NSError* _Nullable error))completion {
     NSURL *urlRequest = [[NSURL alloc] initWithString:url];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:urlRequest];
     [request setHTTPMethod:[NSString stringWithFormat:@"%@", httpMethod]];
     [request setHTTPBody:[self httpBodyForParameters:params]];
+    [request setTimeoutInterval:timeout];
+    
+    [[[NSURLSession sessionWithConfiguration:NSURLSessionConfiguration.defaultSessionConfiguration] dataTaskWithRequest:request completionHandler:completion] resume];
 
 }
 

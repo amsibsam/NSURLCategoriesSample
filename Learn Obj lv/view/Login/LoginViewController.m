@@ -34,12 +34,23 @@
     [super viewDidLoad];
     networkUtil.delegate = self;
     
-    [[NSURLSession sharedSession] request:@"https://x.rajaapi.com/poe" withMethod:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSJSONSerialization *jsonSerialize = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:NULL];
-        NSDictionary *jsonDictionary = (NSDictionary*) jsonSerialize;
-        NSString *token = [NSString stringWithFormat:@"%@", [jsonDictionary valueForKey:@"token"]];
-        NSLog(@"Got response %@", jsonDictionary);
-        NSLog(@"Token %@", token);
+//    [[NSURLSession sharedSession] request:@"https://x.rajaapi.com/poe" withMethod:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSJSONSerialization *jsonSerialize = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:NULL];
+//        NSDictionary *jsonDictionary = (NSDictionary*) jsonSerialize;
+//        NSString *token = [NSString stringWithFormat:@"%@", [jsonDictionary valueForKey:@"token"]];
+//        NSLog(@"Got response %@", jsonDictionary);
+//        NSLog(@"Token %@", token);
+//    }];
+    
+    NSDictionary *params = @{@"nim": @"13520244022", @"password": @"13520244022"};
+    [[NSURLSession sharedSession] request:@"http://crysdip.herokuapp.com/api/mahasiswa/login" withMethod:@"POST" andParams:params timeout:10 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (data != NULL) {
+            NSJSONSerialization *jsonSerialize = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:NULL];
+            NSDictionary *jsonDictionary = (NSDictionary*) jsonSerialize;
+            NSLog(@"response regiser %@", jsonDictionary);
+        } else if (error != NULL) {
+            NSLog(@"error request %@", error.userInfo);
+        }
     }];
     // Do any additional setup after loading the view from its nib.
 }

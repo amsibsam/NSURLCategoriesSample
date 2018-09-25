@@ -19,6 +19,7 @@
 		11E100742158B9EF00834FEB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E1006D2158B9EF00834FEB /* LoginViewController.xib */; };
 		11E100752158B9EF00834FEB /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E100702158B9EF00834FEB /* NetworkUtil.m */; };
 		11E1007B2158C40A00834FEB /* NSURLSession+RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E1007A2158C40A00834FEB /* NSURLSession+RequestHelper.m */; };
+		85359689640CA9C0C44744C0 /* libPods-Learn Obj lv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A984277D0AC2C476FC8C4595 /* libPods-Learn Obj lv.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,9 @@
 		11E100712158B9EF00834FEB /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
 		11E100792158C40A00834FEB /* NSURLSession+RequestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+RequestHelper.h"; sourceTree = "<group>"; };
 		11E1007A2158C40A00834FEB /* NSURLSession+RequestHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+RequestHelper.m"; sourceTree = "<group>"; };
+		1F225585B7EEDD4DEDDE23B7 /* Pods-Learn Obj lv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn Obj lv.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learn Obj lv/Pods-Learn Obj lv.release.xcconfig"; sourceTree = "<group>"; };
+		600B889B1D051AC3C089FDE0 /* Pods-Learn Obj lv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn Obj lv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn Obj lv/Pods-Learn Obj lv.debug.xcconfig"; sourceTree = "<group>"; };
+		A984277D0AC2C476FC8C4595 /* libPods-Learn Obj lv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Learn Obj lv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85359689640CA9C0C44744C0 /* libPods-Learn Obj lv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,8 @@
 			children = (
 				11E1003921589C2100834FEB /* Learn Obj lv */,
 				11E1003821589C2100834FEB /* Products */,
+				5699494728D158474C816658 /* Pods */,
+				959795ACB1E7833661B1044A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +146,23 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		5699494728D158474C816658 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				600B889B1D051AC3C089FDE0 /* Pods-Learn Obj lv.debug.xcconfig */,
+				1F225585B7EEDD4DEDDE23B7 /* Pods-Learn Obj lv.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		959795ACB1E7833661B1044A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A984277D0AC2C476FC8C4595 /* libPods-Learn Obj lv.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11E1004D21589C2100834FEB /* Build configuration list for PBXNativeTarget "Learn Obj lv" */;
 			buildPhases = (
+				E018CAC3F6C028676AF1E599 /* [CP] Check Pods Manifest.lock */,
 				11E1003321589C2100834FEB /* Sources */,
 				11E1003421589C2100834FEB /* Frameworks */,
 				11E1003521589C2100834FEB /* Resources */,
@@ -205,6 +230,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E018CAC3F6C028676AF1E599 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Learn Obj lv-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11E1003321589C2100834FEB /* Sources */ = {
@@ -350,6 +400,7 @@
 		};
 		11E1004E21589C2100834FEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 600B889B1D051AC3C089FDE0 /* Pods-Learn Obj lv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +415,7 @@
 		};
 		11E1004F21589C2100834FEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F225585B7EEDD4DEDDE23B7 /* Pods-Learn Obj lv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
