@@ -110,19 +110,19 @@
 		11E100672158B9EF00834FEB /* view */ = {
 			isa = PBXGroup;
 			children = (
-				11E100682158B9EF00834FEB /* Profile */,
+				11E100682158B9EF00834FEB /* QR */,
 				11E1006B2158B9EF00834FEB /* Login */,
 			);
 			path = view;
 			sourceTree = "<group>";
 		};
-		11E100682158B9EF00834FEB /* Profile */ = {
+		11E100682158B9EF00834FEB /* QR */ = {
 			isa = PBXGroup;
 			children = (
 				11E100692158B9EF00834FEB /* ProfileViewController.h */,
 				11E1006A2158B9EF00834FEB /* ProfileViewController.m */,
 			);
-			path = Profile;
+			path = QR;
 			sourceTree = "<group>";
 		};
 		11E1006B2158B9EF00834FEB /* Login */ = {
@@ -237,15 +237,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Learn Obj lv-checkManifestLockResult.txt",
 			);

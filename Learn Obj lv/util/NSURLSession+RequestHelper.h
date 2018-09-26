@@ -12,6 +12,4 @@
 
 - (void)request:(NSString*) url withMethod:(NSString*)httpMethod andParams:(NSDictionary*) params timeout:(double) timeout completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completion;
 
-- (void)request:(NSString*) url withMethod:(NSString*)httpMethod completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completion;
-
 @end
