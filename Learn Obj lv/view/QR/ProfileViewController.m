@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "NetworkUtil.h"
 #import "NSURLSession+RequestHelper.h"
+#import "SingletonObject.h"
 
 @interface ProfileViewController ()
 @property (strong, nonatomic) UIImageView *ivQR;
@@ -57,6 +58,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
+    
+    NSLog(@"value in profile: %@", [SingletonObject sharedInstance].value);
     
     __weak ProfileViewController *weakSelf = self;
     [[NSURLSession sharedSession] request:@"http://crysdip.herokuapp.com/api/mahasiswa/login" withMethod:@"POST" andParams:@{@"nim": @"13520244022", @"password": @"13520244022"} timeout:30 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -126,11 +129,6 @@
     _ciQrImage = filter.outputImage;
     
     _ivQR.image = [UIImage imageWithCIImage:_ciQrImage];
-}
-
-- (void)dealloc
-{
-    
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation NSURLSession (RequestHelper)
 
-- (void)request:(NSString *)url withMethod:(NSString*) httpMethod andParams:(NSDictionary *)params timeout:(double)timeout completionHandler:(void (^)(NSData* _Nullable data, NSURLResponse* _Nullable response, NSError* _Nullable error))completion {
+- (void)request:(NSString*)url withMethod:(NSString*)httpMethod andParams:(NSDictionary*)params timeout:(double)timeout completionHandler:(void (^)(NSData* _Nullable data, NSURLResponse* _Nullable response, NSError* _Nullable error))completion {
     NSURL *urlRequest = [[NSURL alloc] initWithString:url];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlRequest];
@@ -21,16 +21,16 @@
     __weak NSURLSession *weakSelf = self;
     NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(data, response, error);
+            completion(data, response, error) ;
         });
         
-        [weakSelf invalidateAndCancel];
+//        [weakSelf invalidateAndCancel];
     }];
     
     [task resume];
 }
 
-- (NSData *)httpBodyForParameters:(NSDictionary *)parameters {
+- (NSData*)httpBodyForParameters:(NSDictionary*)parameters {
     NSMutableArray *parameterArray = [NSMutableArray array];
     
     [parameters enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {

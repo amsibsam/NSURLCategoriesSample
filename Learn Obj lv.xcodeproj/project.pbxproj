@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11410F0E215B7F6C001E94C2 /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 11410F0D215B7F6C001E94C2 /* SingletonObject.m */; };
 		11E1003C21589C2100834FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E1003B21589C2100834FEB /* AppDelegate.m */; };
 		11E1003F21589C2100834FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E1003E21589C2100834FEB /* ViewController.m */; };
 		11E1004221589C2100834FEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E1004021589C2100834FEB /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11410F0C215B7F6C001E94C2 /* SingletonObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
+		11410F0D215B7F6C001E94C2 /* SingletonObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		11E1003721589C2100834FEB /* Learn Obj lv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Obj lv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E1003A21589C2100834FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11E1003B21589C2100834FEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				11E100712158B9EF00834FEB /* NetworkUtil.h */,
 				11E100792158C40A00834FEB /* NSURLSession+RequestHelper.h */,
 				11E1007A2158C40A00834FEB /* NSURLSession+RequestHelper.m */,
+				11410F0C215B7F6C001E94C2 /* SingletonObject.h */,
+				11410F0D215B7F6C001E94C2 /* SingletonObject.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11410F0E215B7F6C001E94C2 /* SingletonObject.m in Sources */,
 				11E100662158B9E600834FEB /* NetworkManager.m in Sources */,
 				11E1003F21589C2100834FEB /* ViewController.m in Sources */,
 				11E100732158B9EF00834FEB /* LoginViewController.m in Sources */,

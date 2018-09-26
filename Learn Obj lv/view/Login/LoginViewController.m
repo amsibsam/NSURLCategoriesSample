@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "ProfileViewController.h"
 #import "NSURLSession+RequestHelper.h"
+#import "SingletonObject.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *lbEmail;
@@ -29,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [SingletonObject sharedInstance].value = @"ok";
+    NSLog(@"value: %@", [SingletonObject sharedInstance].value);
     // Do any additional setup after loading the view from its nib.
 }
 
